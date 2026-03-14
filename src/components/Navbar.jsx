@@ -44,8 +44,7 @@ export default function Navbar({ activeTab, setActiveTab}) {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="mobile-menu">
+      <div style={{ display: isMobileMenuOpen ? 'flex' : 'none', flexDirection: 'column' }} className="mobile-menu">
           <NavLinks 
             activeTab={activeTab} 
             setActiveTab={handleNavClick}
@@ -55,7 +54,6 @@ export default function Navbar({ activeTab, setActiveTab}) {
             <button className="btn btn-primary">Sign In</button>
           </div>
         </div>
-      )}
     </nav>
   );
 }

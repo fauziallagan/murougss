@@ -132,7 +132,11 @@ export default function HomePage({setActiveTab}) {
           <div className="cta-content">
             <h2>Ready to Compete?</h2>
             <p>Join thousands of innovators competing for glory and exciting prizes. Register now!</p>
-            <button className="btn btn-primary">View All Competitions</button>
+            <button 
+                className="btn btn-primary"
+                onClick={() => setActiveTab('competitions')}>
+                View All Competitions
+              </button>
           </div>
         </div>
       </section>

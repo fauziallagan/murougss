@@ -334,14 +334,7 @@
   }
 
   /* Show mobile menu when open */
-  .navbar.mobile-menu-open {
     .mobile-menu {
-      display: flex;
-    }
-  }
-
-  .mobile-menu {
-    display: none;
     position: absolute;
     top: 60px;
     left: 0;
