@@ -21,8 +21,9 @@
 
 /* FOOTER */
 .footer {
-  background:  rgba(35, 41, 54, 0.511);
-  border-top: 1px solid rgba(172, 186, 205, 0.5);
+  background: rgba(35, 41, 54, 0.511);
+  border-top: 1px solid rgba(172, 186, 205, 0.4);
+  box-shadow: 0 -1px 0 rgba(168, 85, 247, 0.15);
   padding: 64px 0 24px;
   color: var(--slate-300);
   position: relative;
@@ -59,7 +60,6 @@
   font-weight: bold;
   font-size: 18px;
   color: var(--text-white);
-
 }
 
 .footer-logo-box {
@@ -68,10 +68,8 @@
   background: transparent;
   border-radius: 10%;
   align-items: center;
-  /* justify-content: center; */
   overflow: hidden;
   color: var(--text-white);
-  /* box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2); */
 }
 
 .footer-section h4 {
@@ -106,17 +104,28 @@
   margin-bottom: 0;
 }
 
-.footer-links a {
+/* UPDATED: support both <a> and <button> */
+.footer-links a,
+.footer-links button {
   color: var(--slate-400);
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
   display: inline-block;
+
+  /* reset button default styles */
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links button:hover {
   color: var(--primary);
   transform: translateX(4px);
+  text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
 }
 
 .footer-bottom {
@@ -135,7 +144,6 @@
   color: var(--slate-400);
   margin: 0;
   text-align: center;
-
 }
 
 .footer-links-bottom {
@@ -147,7 +155,7 @@
   color: var(--slate-400);
   text-decoration: none;
   font-size: 14px;
-  transition: all 0.3s ease;
+  transition: all 0.25s cubic-bezier(.4,0,.2,1);
   display: inline-block;
 }
 
@@ -188,7 +196,8 @@
     font-size: 13px;
   }
 
-  .footer-links a {
+  .footer-links a,
+  .footer-links button {
     font-size: 13px;
   }
 
@@ -204,7 +213,11 @@
 /* DARK MODE SUPPORT */
 @media (prefers-color-scheme: dark) {
   .footer {
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.9), rgba(15, 23, 42, 0.9));
+    background: linear-gradient(
+      to bottom,
+      rgba(3, 7, 18, 0.9),
+      rgba(15, 23, 42, 0.9)
+    );
   }
 }
 
