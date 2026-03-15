@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import NavLogo from './NavLogo';
-import NavLinks from './NavLinks';
-import './Navbar.css';
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import NavLogo from "./NavLogo";
+import NavLinks from "./NavLinks";
+import "./Navbar.css";
 
-export default function Navbar({ activeTab, setActiveTab}) {
+export default function Navbar({ activeTab, setActiveTab }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -19,7 +19,6 @@ export default function Navbar({ activeTab, setActiveTab}) {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        
         {/* Logo Section */}
         <NavLogo />
 
@@ -29,13 +28,13 @@ export default function Navbar({ activeTab, setActiveTab}) {
         </div>
 
         {/* Action Buttons - Desktop */}
-        <div className="nav-actions-desktop">
+        {/* <div className="nav-actions-desktop">
           <button className="btn btn-primary">Sign In</button>
-        </div>
+        </div> */}
 
         {/* Mobile Menu Button */}
-        <button 
-          className="mobile-menu-btn" 
+        <button
+          className="mobile-menu-btn"
           onClick={toggleMobileMenu}
           aria-label="Toggle navigation menu"
         >
@@ -44,16 +43,22 @@ export default function Navbar({ activeTab, setActiveTab}) {
       </div>
 
       {/* Mobile Menu */}
-      <div style={{ display: isMobileMenuOpen ? 'flex' : 'none', flexDirection: 'column' }} className="mobile-menu">
-          <NavLinks 
-            activeTab={activeTab} 
-            setActiveTab={handleNavClick}
-            isMobile={true}
-          />
-          <div className="mobile-actions">
+      <div
+        style={{
+          display: isMobileMenuOpen ? "flex" : "none",
+          flexDirection: "column",
+        }}
+        className="mobile-menu"
+      >
+        <NavLinks
+          activeTab={activeTab}
+          setActiveTab={handleNavClick}
+          isMobile={true}
+        />
+        {/* <div className="mobile-actions">
             <button className="btn btn-primary">Sign In</button>
-          </div>
-        </div>
+          </div> */}
+      </div>
     </nav>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ParticlesBackground from "./components/ParticlesBackground";
 
 // Import pages
 import HomePage from './pages/HomePage';
@@ -17,7 +18,7 @@ export default function App() {
   const renderPage = () => {
     switch(activeTab) {
       case 'home':
-        return <HomePage setActiveTab={setActiveTab} />;  // ✅ Pass props
+        return <HomePage setActiveTab={setActiveTab} />;
       case 'schedule':
         return <SchedulePage />;
       case 'workshops':
@@ -27,24 +28,30 @@ export default function App() {
       case 'aboutus':
         return <AboutUsPage />;
       default:
-        return <HomePage setActiveTab={setActiveTab} />;  // ✅ Pass props
+        return <HomePage setActiveTab={setActiveTab} />;
     }
   };
 
   return (
     <div className="app">
+
+      {/* <ParticlesBackground /> */}
+
+      {activeTab === "home" && <ParticlesBackground />}
+
       <div className="bg-effects">
         <div className="bg-effect-1"></div>
         <div className="bg-effect-2"></div>
       </div>
 
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
-      
+
       <main className="page-content">
         {renderPage()}
       </main>
 
-       <Footer setActiveTab={setActiveTab} />
+      <Footer setActiveTab={setActiveTab} />
+
     </div>
   );
 }
