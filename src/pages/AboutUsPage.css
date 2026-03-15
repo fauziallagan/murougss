@@ -382,93 +382,6 @@
   font-size: 13px;
   line-height: 1.6;
 }
-/* TEAM SECTION */
-.team-section {
-  margin-top: 80px;
-}
-
-.about-header {
-  text-align: center;
-  margin-bottom: 64px;
-}
-
-.about-badge {
-  display: inline-block;
-  padding: 8px 16px;
-  background: rgba(59, 130, 246, 0.2);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: 9999px;
-  color: #93c5fd;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 16px;
-}
-
-.about-header h2 {
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 16px;
-  color: var(--text-white);
-}
-
-.about-header p {
-  font-size: 18px;
-  color: var(--slate-300);
-  max-width: 48rem;
-  margin: 0 auto;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-}
-
-.team-card {
-  padding: 24px;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
-  border: 1px solid rgba(51, 65, 85, 0.5);
-  border-radius: 12px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.team-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-  border-color: rgba(168, 85, 247, 0.5);
-}
-
-.team-avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  margin: 0 auto 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-}
-
-.team-name {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 4px;
-  color: var(--text-white);
-}
-
-.team-role {
-  color: var(--slate-400);
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-.team-bio {
-  color: var(--slate-300);
-  font-size: 13px;
-  line-height: 1.6;
-}
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
@@ -486,62 +399,10 @@
     padding: 40px 0;
   }
 
-  .about-text h2 {
-    font-size: 28px;
-  }
-
-  .about-image {
-    height: 250px;
-    font-size: 60px;
-  }
-
-  .facilities-content {
+  .about-content {
     grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .facilities-list {
-    grid-template-columns: 1fr;
-  }
-
-  .facilities-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-
-  .about-header h2 {
-    font-size: 28px;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .facilities-text h2 {
-    font-size: 24px;
-  }
-
-  .facilities-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .facilities-content {
-    gap: 40px;
-  }
-
-  .facilities-text h2 {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 768px) {
-  .aboutus-section {
-    padding: 40px 0;
+    gap: 32px;
+    margin-bottom: 40px;
   }
 
   .about-text h2 {
@@ -553,31 +414,106 @@
     font-size: 60px;
   }
 
+  .facilities-section {
+    margin-top: 48px;
+  }
+
   .facilities-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
+  }
+
+  .facilities-text h2 {
+    font-size: 26px;
+  }
+
+  .facilities-text p {
+    font-size: 14px;
+    margin-bottom: 24px;
   }
 
   .facilities-list {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
-  .about-header h2 {
-    font-size: 28px;
+  .facility-slider-main {
+    aspect-ratio: 4/3;
+    border-radius: 12px;
   }
 
-  .team-grid {
-    grid-template-columns: 1fr;
+  .facility-slide-overlay h4 {
+    font-size: 14px;
   }
-}
 
-@media (max-width: 480px) {
-  .facilities-text h2 {
-    font-size: 24px;
+  .facility-slide-overlay p {
+    font-size: 12px;
+  }
+
+  .facility-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .facility-thumbs {
+    gap: 6px;
   }
 
   .facility-thumb {
-    width: 60px;
-    height: 42px;
+    width: 64px;
+    height: 44px;
+  }
+
+  .about-header h2 {
+    font-size: 28px;
+  }
+
+  .team-section {
+    margin-top: 48px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutus-section {
+    padding: 24px 0;
+  }
+
+  .about-text h2 {
+    font-size: 24px;
+  }
+
+  .facilities-section {
+    margin-top: 40px;
+  }
+
+  .facilities-text h2 {
+    font-size: 22px;
+  }
+
+  .facilities-list-item {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .facility-slider-main {
+    aspect-ratio: 1/1;
+  }
+
+  .facility-thumb {
+    width: 52px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  .about-header h2 {
+    font-size: 24px;
+  }
+
+  .about-header p {
+    font-size: 15px;
   }
 }
