@@ -36,8 +36,6 @@ export default function Footer({ setActiveTab }) {
                   onClick={() => setActiveTab("home")}
                   style={{
                     cursor: "pointer",
-                    background: "none",
-                    border: "none",
                   }}
                 >
                   Home
@@ -49,8 +47,6 @@ export default function Footer({ setActiveTab }) {
                   onClick={() => setActiveTab("schedule")}
                   style={{
                     cursor: "pointer",
-                    background: "none",
-                    border: "none",
                   }}
                 >
                   Schedule
@@ -62,8 +58,6 @@ export default function Footer({ setActiveTab }) {
                   onClick={() => setActiveTab("workshops")}
                   style={{
                     cursor: "pointer",
-                    background: "none",
-                    border: "none",
                   }}
                 >
                   Workshops
@@ -75,8 +69,6 @@ export default function Footer({ setActiveTab }) {
                   onClick={() => setActiveTab("competitions")}
                   style={{
                     cursor: "pointer",
-                    background: "none",
-                    border: "none",
                   }}
                 >
                   Competitions
@@ -88,8 +80,6 @@ export default function Footer({ setActiveTab }) {
                   onClick={() => setActiveTab("aboutus")}
                   style={{
                     cursor: "pointer",
-                    background: "none",
-                    border: "none",
                   }}
                 >
                   About Us
