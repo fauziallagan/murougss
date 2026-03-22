@@ -10,6 +10,8 @@
   --slate-400: #94a3b8;
   --slate-300: #cbd5e1;
   --text-white: #ffffff;
+  --parallax-x: 0px;
+  --parallax-y: 0px;
 }
 
 .container {
@@ -20,6 +22,58 @@
   z-index: 10;
 }
 
+/* ROOT VAR */
+
+/* BACKGROUND LAYER */
+.workshops-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* layer garis (biar nyatu sama home) */
+.workshops-section::before {
+  content: "";
+  position: absolute;
+  inset: -50px;
+
+  background-image: radial-gradient(
+    rgba(168,85,247,0.15) 1px,
+    transparent 1px
+  );
+
+  background-size: 40px 40px;
+
+  transform: translate(var(--parallax-x), var(--parallax-y));
+  transition: transform 0.1s linear;
+
+  z-index: 0;
+}
+
+/* glow layer */
+.workshops-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(168,85,247,0.15), transparent);
+  transform: translate(calc(var(--parallax-x) * 0.5), calc(var(--parallax-y) * 0.5));
+  z-index: 0;
+}
+
+/* pastikan content di atas */
+.workshops-grid,
+.page-header {
+  position: relative;
+  z-index: 2;
+}
+.workshop-card:hover {
+  transform: 
+    translate3d(
+      calc(var(--parallax-x) * -0.6),
+      calc(var(--parallax-y) * -0.6),
+      0
+    )
+    scale(1.04);
+}
 /* PAGE HEADER */
 .page-header {
   padding: 48px 0;
@@ -43,40 +97,70 @@
 .workshops-section {
   padding: 64px 0;
 }
+.category-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
+  padding: 10px 18px;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  color: var(--slate-300);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.25s ease;
+}
+
+/* ICON (kalau pakai emoji/icon) */
+.category-icon {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* HOVER */
+.category-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(168,85,247,0.5);
+  color: white;
+
+  box-shadow:
+    0 0 12px rgba(168,85,247,0.2),
+    inset 0 0 10px rgba(168,85,247,0.1);
+}
+
+/* ACTIVE */
+.category-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+
+  box-shadow:
+    0 0 20px rgba(168,85,247,0.5),
+    0 10px 25px rgba(168,85,247,0.3);
+}
 /* CATEGORY FILTER */
 .category-filter {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   justify-content: center;
   margin-bottom: 48px;
   flex-wrap: wrap;
 }
 
-.category-btn {
-  padding: 10px 20px;
-  background: transparent;
-  border: 2px solid rgba(51, 65, 85, 0.5);
-  border-radius: 8px;
-  color: var(--slate-300);
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  font-size: 14px;
-}
 
-.category-btn:hover {
+/* .category-btn:hover {
   border-color: var(--primary);
   color: var(--text-white);
   transform: translateY(-2px);
-}
+} */
 
-.category-btn.active {
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  border-color: transparent;
-  color: var(--text-white);
-  box-shadow: 0 10px 20px -5px rgba(168, 85, 247, 0.3);
-}
 
 /* WORKSHOPS GRID */
 .workshops-grid {

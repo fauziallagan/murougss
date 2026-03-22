@@ -1,99 +1,76 @@
-import React, { useState } from 'react';
-import { Clock, Users, Star, Code, Cpu, Zap, TrendingUp, BookOpen } from 'lucide-react';
-import './WorkshopsPage.css';
+import React, { useState, useEffect } from "react";
+import { Clock, Users, Star } from "lucide-react";
+import { getWorkshops } from "../lib/api";
+import "./WorkshopsPage.css";
 
 export default function WorkshopsPage() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [workshops, setWorkshops] = useState([]);
 
-  const workshops = [
-    {
-      id: 1,
-      title: 'Introduction to Arduino',
-      category: 'Microcontrollers',
-      description: 'Learn the basics of Arduino programming and build your first embedded system project.',
-      duration: '4 weeks',
-      level: 'Beginner',
-      students: 24,
-      capacity: 30,
-      rating: 4.8,
-      instructor: 'Dr. James Lee',
-      startDate: 'Mar 15, 2025',
-      icon: Cpu,
-    },
-    {
-      id: 2,
-      title: 'Advanced Python for Robotics',
-      category: 'Programming',
-      description: 'Master Python programming with focus on robotics control, automation, and AI applications.',
-      duration: '6 weeks',
-      level: 'Advanced',
-      students: 18,
-      capacity: 20,
-      rating: 4.9,
-      instructor: 'Engineer Mike',
-      startDate: 'Mar 20, 2025',
-      icon: Code,
-    },
-    {
-      id: 3,
-      title: 'Circuit Design Fundamentals',
-      category: 'Electronics',
-      description: 'Design and build functional circuits using breadboards, resistors, capacitors, and more.',
-      duration: '5 weeks',
-      level: 'Beginner',
-      students: 28,
-      capacity: 30,
-      rating: 4.7,
-      instructor: 'Prof. Emma',
-      startDate: 'Mar 10, 2025',
-      icon: Zap,
-    },
-    {
-      id: 4,
-      title: 'IoT Development Workshop',
-      category: 'IoT',
-      description: 'Build connected devices and learn about sensors, networks, and cloud integration.',
-      duration: '7 weeks',
-      level: 'Intermediate',
-      students: 15,
-      capacity: 25,
-      rating: 4.6,
-      instructor: 'Dr. Sarah Chen',
-      startDate: 'Mar 25, 2025',
-      icon: TrendingUp,
-    },
-    {
-      id: 5,
-      title: 'Machine Learning Basics',
-      category: 'AI/ML',
-      description: 'Get started with machine learning using Python, TensorFlow, and real-world datasets.',
-      duration: '8 weeks',
-      level: 'Advanced',
-      students: 12,
-      capacity: 20,
-      rating: 4.9,
-      instructor: 'Dr. James Lee',
-      startDate: 'Apr 1, 2025',
-      icon: BookOpen,
-    },
-    {
-      id: 6,
-      title: 'Soldering & PCB Assembly',
-      category: 'Electronics',
-      description: 'Hands-on workshop on soldering techniques and printed circuit board assembly.',
-      duration: '2 weeks',
-      level: 'Beginner',
-      students: 20,
-      capacity: 25,
-      rating: 4.8,
-      instructor: 'Prof. Emma',
-      startDate: 'Mar 18, 2025',
-      icon: Zap,
-    },
+  // 🔥 CATEGORY MAPPING (backend → UI)
+  const CATEGORY_MAP = {
+    microcontroller: "Microcontrollers",
+    programming: "Programming",
+    electronics: "Electronics",
+    iot: "IoT",
+    ai: "AI/ML",
+  };
+
+  // 🔥 ICON SWITCH
+  const getIcon = (category) => {
+    switch (category) {
+      case "Microcontrollers":
+        return "💻";
+      case "Programming":
+        return "🧠";
+      case "Electronics":
+        return "⚡";
+      case "IoT":
+        return "🌐";
+      case "AI/ML":
+        return "🤖";
+      default:
+        return "✨";
+    }
+  };
+
+  // 🔥 FETCH DATA
+  useEffect(() => {
+    getWorkshops().then((data) => {
+      const mapped = (data || []).map((item) => ({
+        id: item.id,
+        title: item.title,
+        description: item.description || "",
+        duration: item.duration || "-",
+        level: item.level || "Beginner",
+        students: item.students || 0,
+        capacity: item.capacity || 30,
+        rating: item.rating || 4.5,
+        instructor: item.instructor || "-",
+        startDate: item.startDate || "-",
+
+        // 🔥 FIX CATEGORY DI SINI
+        category: CATEGORY_MAP[item.category?.toLowerCase()] || "General",
+      }));
+
+      setWorkshops(mapped);
+    });
+  }, []);
+
+  // 🔥 CATEGORY FIX SESUAI DESIGN
+  const categories = [
+    "All",
+    "Microcontrollers",
+    "Programming",
+    "Electronics",
+    "IoT",
+    "AI/ML",
   ];
 
-  const categories = ['All', ...new Set(workshops.map(w => w.category))];
-  const filteredWorkshops = selectedCategory === 'All' ? workshops : workshops.filter(w => w.category === selectedCategory);
+  const filteredWorkshops =
+    selectedCategory === "All"
+      ? workshops
+      : workshops.filter((w) => w.category === selectedCategory);
 
   return (
     <>
@@ -106,30 +83,33 @@ export default function WorkshopsPage() {
 
       <section className="workshops-section">
         <div className="container">
-          {/* Category Filter */}
+          {/* 🔥 CATEGORY FILTER */}
           <div className="category-filter">
-            {categories.map(category => (
+            {categories.map((category) => (
               <button
                 key={category}
-                className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
+                className={`category-btn ${
+                  selectedCategory === category ? "active" : ""
+                }`}
                 onClick={() => setSelectedCategory(category)}
               >
+                <span style={{ marginRight: "6px" }}>{getIcon(category)}</span>
                 {category}
               </button>
             ))}
           </div>
 
-          {/* Workshops Grid */}
+          {/* 🔥 WORKSHOPS GRID */}
           <div className="workshops-grid">
-            {filteredWorkshops.map(workshop => {
-              const Icon = workshop.icon;
-              const capacityPercent = (workshop.students / workshop.capacity) * 100;
-              
+            {filteredWorkshops.map((workshop) => {
+              const capacityPercent =
+                (workshop.students / workshop.capacity) * 100;
+
               return (
                 <div key={workshop.id} className="workshop-card">
                   <div className="workshop-header">
                     <div className="workshop-icon">
-                      <Icon size={32} />
+                      {getIcon(workshop.category)}
                     </div>
                     <div className="workshop-badge">{workshop.level}</div>
                   </div>
@@ -144,25 +124,40 @@ export default function WorkshopsPage() {
                     </div>
                     <div className="meta-item">
                       <Users size={16} />
-                      <span>{workshop.students}/{workshop.capacity}</span>
+                      <span>
+                        {workshop.students}/{workshop.capacity}
+                      </span>
                     </div>
                   </div>
 
                   <div className="capacity-bar">
-                    <div className="capacity-fill" style={{ width: `${capacityPercent}%` }}></div>
+                    <div
+                      className="capacity-fill"
+                      style={{ width: `${capacityPercent}%` }}
+                    ></div>
                   </div>
-                  <p className="capacity-text">Spaces left: {workshop.capacity - workshop.students}</p>
+
+                  <p className="capacity-text">
+                    Spaces left: {workshop.capacity - workshop.students}
+                  </p>
 
                   <div className="workshop-rating">
                     <Star size={16} className="star-icon" />
                     <span className="rating-value">{workshop.rating}</span>
                   </div>
 
-                  <p className="workshop-instructor"><strong>Instructor:</strong> {workshop.instructor}</p>
-                  <p className="workshop-date"><strong>Starts:</strong> {workshop.startDate}</p>
+                  <p className="workshop-instructor">
+                    <strong>Instructor:</strong> {workshop.instructor}
+                  </p>
+
+                  <p className="workshop-date">
+                    <strong>Starts:</strong> {workshop.startDate}
+                  </p>
 
                   <button className="btn-enroll">
-                    {workshop.students >= workshop.capacity ? 'Waitlist' : 'Enroll Now'}
+                    {workshop.students >= workshop.capacity
+                      ? "Waitlist"
+                      : "Enroll Now"}
                   </button>
                 </div>
               );

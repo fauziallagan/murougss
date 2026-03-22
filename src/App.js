@@ -35,8 +35,6 @@ export default function App() {
   return (
     <div className="app">
 
-      {/* <ParticlesBackground /> */}
-
       {activeTab === "home" && <ParticlesBackground />}
 
       <div className="bg-effects">
