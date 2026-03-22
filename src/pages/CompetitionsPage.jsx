@@ -81,5 +81,115 @@ export default function CompetitionsPage() {
     };
   };
 
-  return <>{/* ... UI tetap sama */}</>;
+  return (
+    <>
+      <section className="page-header">
+        <div className="container">
+          <h1>Embedded System Competitions</h1>
+          <p>
+            Showcase your skills and compete with innovators from around the lab
+          </p>
+        </div>
+      </section>
+
+      <section className="competitions-section">
+        <div className="container">
+          <div className="competitions-grid">
+            {competitions.map((comp) => {
+              const Icon = comp.icon;
+
+              const status = getStatus(comp.startDate, comp.endDate);
+
+              const countdown =
+                status === "UPCOMING"
+                  ? getCountdownParts(comp.startDate)
+                  : status === "ONGOING"
+                    ? getCountdownParts(comp.endDate)
+                    : null;
+
+              return (
+                <div key={comp.id} className="competition-card">
+                  {comp.image && (
+                    <img
+                      src={comp.image}
+                      alt={comp.title}
+                      className="competition-image"
+                    />
+                  )}
+
+                  {/* STATUS */}
+                  <div className={`comp-status ${status.toLowerCase()}`}>
+                    {status}
+                  </div>
+
+                  <div className="comp-icon">
+                    <Icon size={32} />
+                  </div>
+
+                  <h3 className="comp-title">{comp.title}</h3>
+                  <p className="comp-description">{comp.description}</p>
+
+                  <div className="comp-details">
+                    <div className="comp-detail">
+                      <Calendar size={16} />
+                      <span>
+                        <strong>Date:</strong> {formatDate(comp.date)}
+                      </span>
+                    </div>
+
+                    {/* 🔥 WEB3 COUNTDOWN */}
+                    <div className="countdown-wrapper">
+                      {countdown ? (
+                        ["days", "hours", "minutes", "seconds"].map((unit) => (
+                          <div key={unit} className="countdown-box">
+                            <div className="countdown-value">
+                              {String(countdown[unit]).padStart(2, "0")}
+                            </div>
+                            <div className="countdown-label">{unit}</div>
+                          </div>
+                        ))
+                      ) : (
+                        <div className="countdown-ended">Event Ended</div>
+                      )}
+                    </div>
+
+                    <div className="comp-detail">
+                      <Users size={16} />
+                      <span>
+                        <strong>Participants:</strong> {comp.participants}
+                      </span>
+                    </div>
+
+                    <div className="comp-detail">
+                      <Target size={16} />
+                      <span>
+                        <strong>Level:</strong> {comp.level}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="comp-prize">
+                    🏆 Total Prize Pool: {comp.prize}
+                  </div>
+
+                  {comp.link ? (
+                    <a
+                      href={comp.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn-enroll"
+                    >
+                      Register Now
+                    </a>
+                  ) : (
+                    <button className="btn-enroll">Register Now</button>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }

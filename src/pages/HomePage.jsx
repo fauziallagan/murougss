@@ -49,6 +49,7 @@ export default function HomePage({ setActiveTab }) {
       emoji: "📈",
     },
   ];
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const sentences = [
     "We brings together innovators",
     "makers",
@@ -84,14 +85,15 @@ export default function HomePage({ setActiveTab }) {
         return () => clearTimeout(timeout);
       }
     }
-  }, [charIndex, sentenceIndex, currentWord]);
+  }, [charIndex, sentenceIndex, currentWord, sentences]);
   const [workshops, setWorkshops] = useState([]);
   const [competitions, setCompetitions] = useState([]);
   // ✅ TARO DI SINI
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const getImageUrl = (url) => {
     if (!url) return null;
 
-    const base = "http://localhost:3000";
+    const base = API_URL?.replace(/\/$/, "");
 
     if (url.startsWith("/api")) {
       return `${base}${url}`;
