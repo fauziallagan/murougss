@@ -89,7 +89,7 @@ export default function HomePage({ setActiveTab }) {
   const [workshops, setWorkshops] = useState([]);
   const [competitions, setCompetitions] = useState([]);
   // ✅ TARO DI SINI
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_URL = process.env.REACT_APP_API_URL;
   const getImageUrl = (url) => {
     if (!url) return null;
 

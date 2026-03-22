@@ -3,7 +3,7 @@ import { Calendar, Users, Target, Code, Cpu, Zap } from "lucide-react";
 import { getCompetitions } from "../lib/api";
 import "./CompetitionsPage.css";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = process.env.REACT_APP_API_URL;
 
 export default function CompetitionsPage() {
   const [competitions, setCompetitions] = useState([]);

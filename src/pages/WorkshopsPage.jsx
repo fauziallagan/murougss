@@ -3,20 +3,19 @@ import { Clock, Users, Star } from "lucide-react";
 import { getWorkshops } from "../lib/api";
 import "./WorkshopsPage.css";
 
+// ✅ PINDAH KE LUAR (FIX WARNING)
+const CATEGORY_MAP = {
+  microcontroller: "Microcontrollers",
+  programming: "Programming",
+  electronics: "Electronics",
+  iot: "IoT",
+  ai: "AI/ML",
+};
+
 export default function WorkshopsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [workshops, setWorkshops] = useState([]);
 
-  // 🔥 CATEGORY MAPPING (backend → UI)
-  const CATEGORY_MAP = {
-    microcontroller: "Microcontrollers",
-    programming: "Programming",
-    electronics: "Electronics",
-    iot: "IoT",
-    ai: "AI/ML",
-  };
-
-  // 🔥 ICON SWITCH
   const getIcon = (category) => {
     switch (category) {
       case "Microcontrollers":
@@ -34,7 +33,6 @@ export default function WorkshopsPage() {
     }
   };
 
-  // 🔥 FETCH DATA
   useEffect(() => {
     getWorkshops().then((data) => {
       const mapped = (data || []).map((item) => ({
@@ -49,15 +47,13 @@ export default function WorkshopsPage() {
         instructor: item.instructor || "-",
         startDate: item.startDate || "-",
 
-        // 🔥 FIX CATEGORY DI SINI
         category: CATEGORY_MAP[item.category?.toLowerCase()] || "General",
       }));
 
       setWorkshops(mapped);
     });
-  }, []);
+  }, []); // ✅ sekarang aman
 
-  // 🔥 CATEGORY FIX SESUAI DESIGN
   const categories = [
     "All",
     "Microcontrollers",
