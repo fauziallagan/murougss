@@ -7,10 +7,7 @@ import HomePage from './pages/HomePage';
 import SchedulePage from './pages/SchedulePage';
 import WorkshopsPage from './pages/WorkshopsPage';
 import CompetitionsPage from './pages/CompetitionsPage';
-<<<<<<< HEAD
 import AsistenPage from './pages/AsistenPage';
-=======
->>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
 import AboutUsPage from './pages/AboutUsPage';
 
 import './App.css';
@@ -28,11 +25,8 @@ export default function App() {
         return <WorkshopsPage />;
       case 'competitions':
         return <CompetitionsPage />;
-<<<<<<< HEAD
       case 'asisten':
         return <AsistenPage />;
-=======
->>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
       case 'aboutus':
         return <AboutUsPage />;
       default:

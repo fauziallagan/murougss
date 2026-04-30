@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
 import { Home, Calendar, Lightbulb, Trophy, BookOpen, Users } from 'lucide-react';
-=======
-import { Home, Calendar, Lightbulb, Trophy, BookOpen } from 'lucide-react';
->>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
 
 const NAV_ITEMS = [
   {
@@ -23,7 +19,6 @@ const NAV_ITEMS = [
   },
   {
     id: 'competitions',
-<<<<<<< HEAD
     label: 'ESC',
     icon: Trophy,
   },
@@ -33,12 +28,6 @@ const NAV_ITEMS = [
     icon: Users,
   },
   {
-=======
-    label: 'Competitions',
-    icon: Trophy,
-  },
-  {
->>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
     id: 'aboutus',
     label: 'About Us',
     icon: BookOpen,

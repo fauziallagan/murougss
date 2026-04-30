@@ -65,35 +65,16 @@ export default function HomePage({setActiveTab}) {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-<<<<<<< HEAD
             <h1>
               Pusat Studi <span className="gradient-text">Multimedia dan Robotika</span>
             </h1>
-=======
-            {/* <div className="status-badge"> */}
-              {/* <div className="status-dot"></div>
-              <span>Welcome to the Future of Innovation</span> */}
-            {/* </div> */}
-
-            <h1>
-              Pusat Studi <span className="gradient-text">Multimedia dan Robotika</span>
-            </h1>
-
->>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
             <p>
               We brings together innovators, makers, and learners to explore cutting-edge technology,
               collaborate on projects, and transform ideas into reality.
             </p>
-<<<<<<< HEAD
             <div className="cta-buttons">
               <button 
                 className="btn btn-primary-hm"
-=======
-
-            <div className="cta-buttons">
-              <button 
-                className="btn btn-primary"
->>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
                 onClick={() => setActiveTab('aboutus')}>
                 Tentang Kami
               </button>
@@ -144,15 +125,11 @@ export default function HomePage({setActiveTab}) {
           <div className="cta-content">
             <h2>Ready to Compete?</h2>
             <p>Join thousands of innovators competing for glory and exciting prizes. Register now!</p>
-<<<<<<< HEAD
             <button 
                 className="btn btn-primary-hm"
                 onClick={() => setActiveTab('competitions')}>
                 View All Competitions
               </button>
-=======
-            <button className="btn btn-primary">View All Competitions</button>
->>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
           </div>
         </div>
       </section>
