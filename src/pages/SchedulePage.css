@@ -1,0 +1,544 @@
+/* PAGE HEADER */
+.page-header-jad {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin-top: -70px;     
+  padding: 100px 20px 80px; 
+
+  background: radial-gradient(circle at top, rgba(168,85,247,0.15), transparent 60%),
+              linear-gradient(to bottom, #12082a, #0a0a0f);
+}
+
+.page-header-jad h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.page-header-jad p {
+  font-size: 18px;
+  color: var(--slate-300);
+}
+
+/* HEADER ACTIONS */
+.header-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  
+}
+
+.btn-header-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+}
+
+.btn-header-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(168, 85, 247, 0.4);
+}
+
+.btn-header-secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--slate-300);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-header-secondary:hover {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: var(--slate-400);
+  color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+/* PRAKTIKUM SECTION */
+.praktikum-section {
+  padding: 48px 0 80px;
+  
+}
+/* TAB MENU */
+.tab-menu {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  background: transparent;
+  color: var(--slate-400);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: var(--text-white);
+  border-color: var(--slate-400);
+  background: rgba(30, 41, 59, 0.4);
+}
+
+.tab-btn.active {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.35);
+}
+
+/* TAB CONTENT */
+.tab-content {
+  min-height: 400px;
+}
+
+/* SECTION INTRO */
+.section-intro {
+  margin-bottom: 32px;
+}
+
+.section-intro h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin: 0 0 8px;
+}
+
+.section-intro p {
+  font-size: 15px;
+  color: var(--slate-400);
+  margin: 0;
+}
+.jadwal-wrapper {
+  width: 100%;
+}
+
+/* ================= NEW JADWAL ================= */
+
+.jadwal-wrapper-new {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* HEADER S1 / D3 */
+.jadwal-group-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.jadwal-badge-new {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* GRID */
+.jadwal-grid-new {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.jadwal-item-card {
+  background: linear-gradient(135deg, rgba(30,41,59,0.5), rgba(15,23,42,0.5));
+  border: 1px solid rgba(51,65,85,0.5);
+  border-radius: 16px;
+  padding: 18px;
+  transition: all 0.3s ease;
+}
+
+.jadwal-item-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(168,85,247,0.5);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* HEAD */
+.jadwal-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.jadwal-item-head h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.jadwal-date {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  color: var(--slate-400);
+}
+
+/* BODY */
+.jadwal-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--slate-400);
+}
+
+.jadwal-item-body div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ICON COLOR */
+.jadwal-group:nth-child(1) svg {
+  color: var(--primary);
+}
+
+.jadwal-group:nth-child(2) svg {
+  color: var(--secondary);
+}
+
+/* ========================================
+   SOP
+   ======================================== */
+
+.sop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sop-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
+  border: 1px solid rgba(51, 65, 85, 0.4);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.sop-card:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  transform: translateX(4px);
+  background: rgba(168, 85, 247, 0.05);
+}
+
+.sop-number {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.sop-content {
+  flex: 1;
+}
+
+.sop-content h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin: 0 0 4px;
+}
+
+.sop-content p {
+  font-size: 13px;
+  color: var(--slate-400);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.sop-arrow {
+  color: var(--slate-500);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.sop-card:hover .sop-arrow {
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+/* ========================================
+   SILABUS
+   ======================================== */
+
+.silabus-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.silabus-list::before {
+  content: '';
+  position: absolute;
+  left: 72px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  opacity: 0.3;
+}
+
+.silabus-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 0;
+  position: relative;
+}
+
+.silabus-week {
+  width: 80px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: right;
+  flex-shrink: 0;
+  padding-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+.silabus-content {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
+  border: 1px solid rgba(51, 65, 85, 0.4);
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: all 0.3s ease;
+  margin-left: 16px;
+}
+
+.silabus-content:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  background: rgba(168, 85, 247, 0.05);
+}
+
+.silabus-content h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin: 0 0 4px;
+}
+
+.silabus-content p {
+  font-size: 13px;
+  color: var(--slate-400);
+  margin: 0;
+}
+
+/* ========================================
+   MATERI
+   ======================================== */
+
+.materi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.materi-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
+  border: 1px solid rgba(51, 65, 85, 0.4);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.materi-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  transform: translateX(4px);
+}
+
+.materi-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.materi-info {
+  flex: 1;
+}
+
+.materi-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-white);
+  margin: 0 0 4px;
+}
+
+.materi-info span {
+  font-size: 12px;
+  color: var(--slate-400);
+}
+
+.materi-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
+  color: var(--secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.materi-download-btn:hover {
+  background: rgba(59, 130, 246, 0.25);
+  border-color: var(--secondary);
+  color: #fff;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .tab-menu {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  @media (max-width: 1024px) {
+    .jadwal-grid-new {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .jadwal-grid-new {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .sop-card {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .silabus-list::before {
+    display: none;
+  }
+
+  .silabus-card {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .silabus-week {
+    text-align: left;
+    width: auto;
+  }
+
+  .silabus-content {
+    margin-left: 0;
+  }
+
+  .materi-card {
+    padding: 14px 16px;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .praktikum-section {
+    padding: 32px 0 60px;
+  }
+
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .section-intro h2 {
+    font-size: 22px;
+  }
+
+  .sop-number {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .materi-card {
+    padding: 12px;
+  }
+
+  .materi-download-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+}
