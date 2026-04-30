@@ -28,10 +28,17 @@ export default function Navbar({ activeTab, setActiveTab}) {
           <NavLinks activeTab={activeTab} setActiveTab={handleNavClick} />
         </div>
 
+<<<<<<< HEAD
         {/* Action Buttons - Desktop
         <div className="nav-actions-desktop">
           <button className="btn btn-primary">Sign In</button>
         </div> */}
+=======
+        {/* Action Buttons - Desktop */}
+        <div className="nav-actions-desktop">
+          <button className="btn btn-primary">Sign In</button>
+        </div>
+>>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
 
         {/* Mobile Menu Button */}
         <button 
@@ -44,16 +51,29 @@ export default function Navbar({ activeTab, setActiveTab}) {
       </div>
 
       {/* Mobile Menu */}
+<<<<<<< HEAD
       <div style={{ display: isMobileMenuOpen ? 'flex' : 'none', flexDirection: 'column' }} className="mobile-menu">
+=======
+      {isMobileMenuOpen && (
+        <div className="mobile-menu">
+>>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
           <NavLinks 
             activeTab={activeTab} 
             setActiveTab={handleNavClick}
             isMobile={true}
           />
+<<<<<<< HEAD
           {/* <div className="mobile-actions">
             <button className="btn btn-primary">Sign In</button>
           </div> */}
         </div>
+=======
+          <div className="mobile-actions">
+            <button className="btn btn-primary">Sign In</button>
+          </div>
+        </div>
+      )}
+>>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
     </nav>
   );
 }

@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+/* ========================================
+   NAVBAR MAIN STYLES
+   ======================================== */
+
+>>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
 :root {
   --primary: #a855f7;
   --primary-dark: #7c3aed;
@@ -14,17 +21,30 @@
   --text-white: #ffffff;
 }
 
+<<<<<<< HEAD
 .navbar {
   border-bottom: 1px solid rgba(51, 65, 85, 0.5);
   backdrop-filter: blur(10px);
+=======
+/* NAVIGATION - MAIN NAVBAR */
+.navbar {
+  /* border-bottom: 1px solid rgba(51, 65, 85, 0.5); */
+  backdrop-filter: blur(10px);
+  /* background: */
+>>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
   position: sticky;
   top: 0;
   z-index: 1000;
   animation: slideDown 0.5s ease-out;
+<<<<<<< HEAD
   font-family: Verdana, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 
+=======
+}
+
+>>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
 @keyframes slideDown {
   from {
     transform: translateY(-100%);
@@ -92,6 +112,10 @@
 .nav-logo-text {
   background: linear-gradient(135deg, var(--text-white) 0%, var(--slate-300) 100%);
   -webkit-background-clip: text;
+<<<<<<< HEAD
+=======
+  /* -webkit-text-fill-color: transparent;  */
+>>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
   background-clip: text;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -208,6 +232,25 @@
   transform: translateY(0);
 }
 
+<<<<<<< HEAD
+=======
+/* .btn-secondary {
+  border: 1.5px solid var(--slate-700);
+  background: transparent;
+  color: var(--text-white);
+}
+
+.btn-secondary:hover {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: var(--slate-400);
+  transform: translateY(-2px);
+} */
+
+/* .btn-secondary:active {
+  transform: translateY(0);
+} */
+
+>>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
 /* MOBILE MENU BUTTON */
 .mobile-menu-btn {
   display: none;
@@ -313,7 +356,18 @@
   }
 
   /* Show mobile menu when open */
+<<<<<<< HEAD
     .mobile-menu {
+=======
+  .navbar.mobile-menu-open {
+    .mobile-menu {
+      display: flex;
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+>>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
     position: absolute;
     top: 60px;
     left: 0;
@@ -385,7 +439,11 @@
 
 @media (prefers-color-scheme: dark) {
   .navbar {
+<<<<<<< HEAD
     background: transparent;
+=======
+    background: rgba(3, 7, 18, 0.6);
+>>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
   }
 
   .mobile-menu {

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* PAGE HEADER */
 .page-header-we {
   position: relative;
@@ -440,3 +441,9 @@
     font-size: 24px;
   }
 }
+=======
+/* ABOUT US PAGE STYLES - Create this as AboutUsPage.css */
+/* This file uses the same styles as CompetitionsPage.css from line 154 onwards */
+
+@import url('./CompetitionsPage.css');
+>>>>>>> b40a687eaadc589b817ab358bb8571cb22dd7d7c
