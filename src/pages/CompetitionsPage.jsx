@@ -12,6 +12,15 @@ const competitionsData = [
       { id: 'rcv', title: 'Robot Computer Vision', bg: '/WorkshopDrone.jpg', desc: 'Robot berbasis computer vision.' },
     ],
   },
+   {
+    year: '202',
+    panitia: '/ESC 22-23.jpeg',
+    events: [
+      { id: 'drone', title: 'Drone', bg: '/WorkshopDrone.jpg', desc: 'Kompetisi drone racing dan misi otomatis.' },
+      { id: 'wf', title: 'Workshop Festival', bg: '/WorkshopDrone.jpg', desc: 'Ajang kreativitas teknologi.' },
+      { id: 'rcv', title: 'Robot Computer Vision', bg: '/WorkshopDrone.jpg', desc: 'Robot berbasis computer vision.' },
+    ],
+  },
   {
     year: '2026',
     panitia: '/ESC 24-25.jpeg',
@@ -64,7 +73,7 @@ function YearSection({ data }) {
           <span className="year-text">ESC {data.year}</span>
 
           {data.isLive ? (
-            <span className="badge-live">● On Goin</span>
+            <span className="badge-live">● On Going</span>
           ) : (
             <span className="badge-done">Selesai</span>
           )}

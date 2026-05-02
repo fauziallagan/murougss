@@ -1,442 +1,790 @@
-/* PAGE HEADER */
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
 .page-header-we {
   position: relative;
   overflow: hidden;
   text-align: center;
-  margin-top: -70px;     
-  padding: 140px 20px 80px; 
 
-  background: radial-gradient(circle at top, rgba(168,85,247,0.15), transparent 60%),
-              linear-gradient(to bottom, #12082a, #0a0a0f);
+  margin-top: -70px;
+
+  padding: 140px 20px 80px;
+
+  background:
+    radial-gradient(circle at top,
+      rgba(168, 85, 247, 0.15),
+      transparent 60%),
+    linear-gradient(to bottom,
+      #12082a,
+      #0a0a0f);
 }
 
 .page-header-we h1 {
   font-size: clamp(32px, 6vw, 56px);
   font-weight: 900;
+
   margin-bottom: 16px;
 
-  background: linear-gradient(90deg, #ffffff, #d8b4fe, #60a5fa);
-  background-size: 200% auto;
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #d8b4fe,
+      #60a5fa
+    );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  animation: gradientShift 4s linear infinite;
 }
 
 .page-header-we p {
   font-size: 18px;
-  color: var(--slate-300);
+  color: #cbd5e1;
 }
 
 
-/* ABOUT US SECTION */
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
 .aboutus-section {
-  padding: 64px 0;
+  padding: 70px 0;
 }
 
 .about-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(350px, 1fr));
+
   gap: 48px;
-  margin-bottom: 64px;
+
   align-items: center;
+
+  margin-bottom: 90px;
 }
 
+
+/* =========================================================
+   ABOUT TEXT
+========================================================= */
+
 .about-text h2 {
-  font-size: 36px;
-  font-weight: bold;
+  font-size: 38px;
+  font-weight: 900;
+
+  color: white;
+
   margin-bottom: 24px;
-  color: var(--text-white);
 }
 
 .about-text p {
-  color: var(--slate-300);
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 16px;
+  color: #cbd5e1;
+
+  line-height: 1.9;
+
+  margin-bottom: 18px;
+
+  font-size: 15px;
 }
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
 
 .about-features {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 24px;
+
+  gap: 18px;
+
+  margin-top: 28px;
 }
 
 .about-feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+
+  gap: 14px;
 }
 
 .about-feature-icon {
-  width: 40px;
-  height: 40px;
-  background: rgba(168, 85, 247, 0.2);
-  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+
+  border-radius: 14px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
+
+  background: rgba(168, 85, 247, 0.18);
+
+  color: #a855f7;
+
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .about-feature-text h4 {
-  font-weight: 600;
+  color: white;
+
   margin-bottom: 4px;
-  color: var(--text-white);
+
+  font-size: 15px;
+
+  font-weight: 700;
 }
 
 .about-feature-text p {
-  font-size: 13px;
-  color: var(--slate-400);
   margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.7;
 }
+
+
+/* =========================================================
+   ABOUT IMAGE
+========================================================= */
 
 .about-image {
   width: 100%;
-  height: 400px;
-  border-radius: 16px;
-  overflow: hidden; 
-  border: 2px solid rgba(51, 65, 85, 0.5);
+  height: 430px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.35);
 }
 
 .about-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  transition: transform 0.6s ease;
+
+  transition: transform .8s ease;
 }
+
 .about-image:hover img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
-.ios-slider {
-  position: relative;
-  height: 420px;
-  border-radius: 20px;
-  overflow: hidden;
-  background: rgba(15,23,42,0.6);
-  border: 1px solid rgba(51,65,85,0.4);
+
+/* =========================================================
+   FACILITIES
+========================================================= */
+
+.facilities-section {
+  margin-top: 90px;
 }
 
-.ios-slider .facility-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transform: scale(1.08);
-  filter: blur(6px);
-  transition: 
-    opacity 0.6s cubic-bezier(0.22,1,0.36,1),
-    transform 0.9s cubic-bezier(0.22,1,0.36,1),
-    filter 0.6s ease;
-  pointer-events: none;
+.facilities-content {
+  margin-bottom: 30px;
 }
 
-.ios-slider .facility-slide.active {
-  opacity: 1;
-  transform: scale(1);
-  filter: blur(0);
-  z-index: 2;
-  pointer-events: auto;
-}
+.facilities-label {
+  display: inline-block;
 
-.ios-slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.facilities-section { 
-  margin-top: 80px; 
-} 
-
-.facilities-content { 
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  gap: 64px; 
-  align-items: center; 
-}
-
- .facilities-label { 
-  display: block;
   font-size: 12px;
-  font-weight: 700; 
-  letter-spacing: 1.5px; 
-  color: var(--secondary); 
-  margin-bottom: 16px; 
-  text-transform: uppercase;
- } 
-
-.facilities-text h2 { 
-  font-size: 36px; 
-  font-weight: 800; 
-  color: var(--text-white); 
-  margin-bottom: 16px; 
-  line-height: 1.2; 
-} 
-
-.facilities-text p { 
-  color: var(--slate-300); 
-  font-size: 15px; 
-  line-height: 1.8; 
-  margin-bottom: 32px; 
-} 
-
-.facility-slide-overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 28px;
-  background: linear-gradient(
-    to top,
-    rgba(3,7,18,0.85) 0%,
-    rgba(3,7,18,0.2) 60%,
-    transparent 100%
-  );
-}
-
-.facility-slide-overlay h4 {
-  font-size: 18px;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 4px;
+
+  letter-spacing: 2px;
+
+  color: #a855f7;
+
+  margin-bottom: 16px;
 }
 
-.facility-slide-overlay p {
-  color: var(--slate-300);
-  font-size: 13px;
-  margin: 0;
+.facilities-text h2 {
+  font-size: 40px;
+  font-weight: 900;
+
+  color: white;
+
+  margin-bottom: 14px;
+
+  line-height: 1.2;
 }
 
-/* Nav Button */
-.facility-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: rgba(3,7,18,0.6);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  z-index: 10;
+.facilities-text p {
+  max-width: 720px;
+
+  color: #cbd5e1;
+
+  line-height: 1.9;
+
+  font-size: 15px;
 }
 
-.facility-btn:hover {
-  background: rgba(168,85,247,0.6);
-  transform: translateY(-50%) scale(1.1);
-}
 
-.facility-btn-prev { left: 16px; }
-.facility-btn-next { right: 16px; }
+/* =========================================================
+   CAMPUS TAB
+========================================================= */
 
-
-/* CAMPUS BUTTON */
 .campus-tabs {
   display: flex;
-  gap: 12px;
-  margin-bottom: 28px;
   flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin: 34px 0 32px;
 }
 
 .campus-tabs button {
-  padding: 10px 20px;
+  padding: 12px 22px;
+
   border-radius: 999px;
-  border: 1px solid rgba(51,65,85,0.5);
-  background: rgba(15, 23, 42, 0.4);
-  color: var(--slate-400);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(15,23,42,0.75);
+
+  color: #cbd5e1;
+
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  backdrop-filter: blur(12px);
+
+  transition: all .3s ease;
 }
 
 .campus-tabs button:hover {
-  color: #fff;
-  border-color: var(--primary);
+  transform: translateY(-2px);
+
+  border-color: #a855f7;
+
+  color: white;
 }
 
 .campus-tabs button.active {
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  color: #fff;
+  background:
+    linear-gradient(
+      135deg,
+      #a855f7,
+      #3b82f6
+    );
+
+  color: white;
+
   border-color: transparent;
-  box-shadow: 0 6px 20px rgba(168,85,247,0.35);
+
+  box-shadow:
+    0 12px 30px rgba(168,85,247,.35);
 }
 
 
-/* ===== SECTION ===== */
+/* =========================================================
+   MODERN SWIPE SLIDER
+========================================================= */
+
+.facility-slider-modern {
+  position: relative;
+
+  width: 100%;
+  height: 520px;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  background: #0f172a;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.45);
+
+  touch-action: pan-y;
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.facility-track-modern {
+  display: flex;
+
+  height: 100%;
+
+  transition:
+    transform .75s cubic-bezier(.22,1,.36,1);
+}
+
+
+/* =========================================================
+   SLIDE
+========================================================= */
+
+.facility-slide-modern {
+  position: relative;
+
+  min-width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.facility-slide-modern img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 1.2s ease,
+    filter .5s ease;
+
+  filter: brightness(.72);
+}
+
+.facility-slide-modern:hover img {
+  transform: scale(1.06);
+
+  filter: brightness(.88);
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.facility-overlay-modern {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 42px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(2,6,23,.96) 10%,
+      rgba(2,6,23,.35) 45%,
+      rgba(2,6,23,.02) 100%
+    );
+}
+
+
+/* =========================================================
+   FACILITY INFO
+========================================================= */
+
+.facility-info-modern {
+  max-width: 560px;
+}
+
+.facility-info-modern h3 {
+  font-size: 42px;
+  font-weight: 900;
+
+  line-height: 1.1;
+
+  margin-bottom: 14px;
+
+  color: white;
+}
+
+.facility-info-modern p {
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,.8);
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.facility-dots {
+  position: absolute;
+
+  left: 50%;
+  bottom: 24px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  gap: 10px;
+
+  z-index: 10;
+}
+
+.facility-dots button {
+  width: 10px;
+  height: 10px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.3);
+
+  cursor: pointer;
+
+  transition: all .35s ease;
+}
+
+.facility-dots button.active {
+  width: 34px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #a855f7,
+      #3b82f6
+    );
+}
+
+/* =========================================================
+   TEAM SECTION
+========================================================= */
+
 .team-section {
-  margin-top: 50px;
-  justify-items: center;
+  margin-top: 100px;
 }
 
 .team-section h2 {
   text-align: center;
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 40px;
+
+  font-size: 38px;
+  font-weight: 900;
+
+  color: white;
+
+  margin-bottom: 44px;
 }
 
-/* ===== DIRECTOR  ===== */
+
+/* =========================================================
+   DIRECTOR
+========================================================= */
+
 .team-director {
   display: flex;
-  margin-bottom: 40px;
-  width: 100%;
-  max-width: 230px;
+  justify-content: center;
+
+  margin-bottom: 44px;
 }
 
-.team-director h3 {
-  font-size: 16px;
-  font-weight: 800;
-  color: #1e293b;
-  margin-bottom: 4px;
-}
 
-.team-director p {
-  font-size: 14px;
-  color: #475569;
-}
+/* =========================================================
+   TEAM GRID
+========================================================= */
 
-/* ===== GRID ===== */
 .team-grid-modern {
-  display: flex;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(180px, 220px));
+
+  justify-content: center;
+
+  gap: 24px;
 }
 
-/* ===== CARD ===== */
+
+/* =========================================================
+   CARD
+========================================================= */
+
 .team-card-modern {
-  border-radius: 5px;
-  overflow: hidden;
-  background: #ffffff;
-  transition: all 0.25s ease;
-  max-width: 230px;
-}
 
-/* hover ala corporate */
-.team-card-modern:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-/* ===== IMAGE ===== */
-.team-image {
   width: 100%;
-  height: 200px; 
-  background: #f1f5f9;
+  max-width: 220px;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  transition: all .35s ease;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.08);
+}
+
+.team-card-modern:hover {
+
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 22px 50px rgba(0,0,0,.18);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.team-image {
+
+  width: 100%;
+
+  height: 240px;
+
+  overflow: hidden;
 }
 
 .team-image img {
+
   width: 100%;
+
   height: 100%;
+
   object-fit: cover;
+
+  transition: transform .6s ease;
 }
 
-/* ===== INFO ===== */
+.team-card-modern:hover img {
+
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   TEAM INFO
+========================================================= */
+
 .team-info {
-  padding: 16px;
+
+  padding: 20px;
+
   text-align: center;
-  border-top: 1px solid #e5e7eb;
 }
 
-/* NAME */
 .team-info h3 {
+
   font-size: 15px;
+
   font-weight: 800;
-  color: #1e293b;
-  margin-bottom: 4px;
+
+  color: #0f172a;
+
+  line-height: 1.5;
+
+  margin-bottom: 6px;
 }
 
-/* ROLE */
 .team-info p {
+
   font-size: 13px;
+
   color: #475569;
+
+  line-height: 1.6;
 }
 
 
-/* SECTION */
+
+/* =========================================================
+   STATS
+========================================================= */
+
 .stats-section-us {
-  margin-top: 80px;
+  margin-top: 90px;
 }
 
-/* GRID */
 .stats-grid-us {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(200px,1fr));
+
   gap: 24px;
+
   max-width: 500px;
+
   margin: 0 auto;
 }
 
-/* CARD */
-.stat-card-us{
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  border-radius: 20px;
-  padding: 30px 20px;
+.stat-card-us {
+  background:
+    linear-gradient(
+      135deg,
+      #1e293b,
+      #0f172a
+    );
+
+  border-radius: 26px;
+
+  padding: 36px 20px;
+
   text-align: center;
-  border: 1px solid rgba(148,163,184,0.2);
-  transition: all 0.3s ease;
+
+  border: 1px solid rgba(148,163,184,.15);
+
+  transition: all .35s ease;
 }
 
-/* hover */
 .stat-card-us:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.35);
 }
 
-/* NUMBER */
 .stat-card-us h2 {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 900;
-  background: linear-gradient(90deg, #a855f7, #3b82f6);
+
+  margin-bottom: 8px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #a855f7,
+      #3b82f6
+    );
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 8px;
 }
 
-/* LABEL */
 .stat-card-us p {
-  font-size: 14px;
   color: #cbd5e1;
-  letter-spacing: 0.5px;
+
+  font-size: 14px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 768px) {
-  .ios-slider {
-    height: 300px;
-  }
 
-  .team-grid {
+  .about-content {
     grid-template-columns: 1fr;
   }
 
-  .team-avatar.large {
-    width: 90px;
-    height: 90px;
-    font-size: 36px;
+  .about-image {
+    height: 320px;
+  }
+
+  .facilities-text h2 {
+    font-size: 30px;
+  }
+
+  .facility-slider-modern {
+    height: 380px;
+
+    border-radius: 22px;
+  }
+
+  .facility-overlay-modern {
+    padding: 24px;
+  }
+
+  .facility-info-modern h3 {
+    font-size: 28px;
+  }
+
+  .facility-info-modern p {
+    font-size: 14px;
+  }
+
+  .team-grid-modern {
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .campus-tabs button {
+    width: 100%;
   }
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 480px) {
-  .ios-slider {
-    height: 240px;
+
+  .page-header-we {
+    padding: 120px 20px 70px;
   }
 
-  .facilities-title {
+  .page-header-we h1 {
+    font-size: 34px;
+  }
+
+  .page-header-we p {
+    font-size: 15px;
+  }
+
+  .about-text h2 {
+    font-size: 28px;
+  }
+
+  .about-image {
+    height: 250px;
+  }
+
+  .facilities-text h2 {
     font-size: 24px;
+  }
+
+  .facility-slider-modern {
+    height: 300px;
+
+    border-radius: 18px;
+  }
+
+  .facility-overlay-modern {
+    padding: 18px;
+  }
+
+  .facility-info-modern h3 {
+    font-size: 20px;
+  }
+
+  .facility-info-modern p {
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  .team-grid-modern {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card-modern {
+    max-width: 220px;
+
+    margin: 0 auto;
+  }
+
+  .team-image {
+    height: 220px;
+  }
+
+  .team-section h2 {
+    font-size: 30px;
+  }
+
+  .stat-card-us h2 {
+    font-size: 32px;
   }
 }
