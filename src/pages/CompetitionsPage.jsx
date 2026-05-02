@@ -13,7 +13,7 @@ const competitionsData = [
     ],
   },
    {
-    year: '202',
+    year: '2025',
     panitia: '/ESC 22-23.jpeg',
     events: [
       { id: 'drone', title: 'Drone', bg: '/WorkshopDrone.jpg', desc: 'Kompetisi drone racing dan misi otomatis.' },
